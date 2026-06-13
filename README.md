@@ -14,7 +14,7 @@ I'm passionate about backend development, cloud technologies, and building scala
 
 ## 🚀 Tech Stack
 
-![My Skills](https://skillicons.dev/icons?i=java,spring,js,nodejs,postgres,mysql,mongodb,aws,docker,git,github,maven,postman)
+![My Skills](https://skillicons.dev/icons?i=java,spring,springboot,js,nodejs,postgres,mysql,mongodb,aws,docker,git,github,maven,postman)
 
 ## 📊 GitHub Statistics
 
