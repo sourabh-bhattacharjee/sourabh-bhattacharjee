@@ -1,0 +1,29 @@
+name: Daily README Update
+
+on:
+  schedule:
+    # Runs every day at 12:00 AM UTC (adjust time as needed)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Update timestamp
+        run: |
+          echo "<!-- Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC') -->" >> README.md
+          
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "chore: daily update to refresh badges" || echo "No changes to commit"
+          git push
